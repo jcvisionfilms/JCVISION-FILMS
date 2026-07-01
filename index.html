@@ -195,6 +195,22 @@ h1.hero-h .warm{color:var(--warm);}
 .quote-wrap .by{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm);margin-top:30px;}
 .quote-wrap .by span{color:var(--muted);}
 
+/* ---------- video testimonials ---------- */
+.vtest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.vtest{display:flex;flex-direction:column;}
+.vtest-media{position:relative;aspect-ratio:9/16;overflow:hidden;border-radius:4px;cursor:pointer;background:#0d1117;}
+.vtest-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.35) brightness(.8);transition:transform .8s var(--ease),filter .6s;}
+.vtest-media:hover .vtest-thumb{transform:scale(1.06);filter:grayscale(0) brightness(1);}
+.vtest-grad{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 45%,rgba(7,9,12,.82));}
+.vtest-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:56px;height:56px;background:rgba(7,9,12,.4);backdrop-filter:blur(2px);}
+.vtest-media:hover .play{background:var(--warm);border-color:var(--warm);}
+.vtest-media:hover .play svg{fill:#1A1306;}
+.vtest-metric{position:absolute;left:15px;top:15px;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#1A1306;background:var(--warm);padding:5px 10px;border-radius:2px;}
+.vtest-body{padding:20px 2px 0;}
+.vtest-quote{font-family:var(--display);font-weight:500;font-size:clamp(16px,1.5vw,19px);line-height:1.4;letter-spacing:-.01em;color:var(--white);}
+.vtest-by{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm);margin-top:16px;}
+.vtest-by span{color:var(--muted);}
+
 /* ---------- contact ---------- */
 .contact{background:linear-gradient(180deg,#140f0a,#1b130a);}
 .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start;}
@@ -223,6 +239,7 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);}
   .cap-grid{grid-template-columns:repeat(2,1fr);}
   .work-grid{grid-template-columns:repeat(2,1fr);}
   .proc-grid{grid-template-columns:repeat(2,1fr);}
+  .vtest-grid{grid-template-columns:repeat(2,1fr);}
   .contact-grid{grid-template-columns:1fr;gap:40px;}
 }
 @media(max-width:680px){
@@ -232,7 +249,7 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);}
   .nav-links.open{display:flex;position:absolute;top:62px;left:0;right:0;flex-direction:column;gap:0;
     background:rgba(11,14,18,.97);backdrop-filter:blur(14px);padding:8px 28px 22px;border-bottom:1px solid var(--line);}
   .nav-links.open a{padding:14px 0;border-bottom:1px solid var(--line);}
-  .cap-grid,.work-grid,.proc-grid{grid-template-columns:1fr;}
+  .cap-grid,.work-grid,.proc-grid,.vtest-grid{grid-template-columns:1fr;}
   .hero::before,.hero::after{height:30px;}
   .marks{gap:30px;}
 }
@@ -249,6 +266,8 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);}
 .vid-box{position:relative;width:min(980px,100%);}
 .vid-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6);}
 .vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.vid-modal.vertical .vid-box{width:auto;height:min(84vh,780px);}
+.vid-modal.vertical .vid-frame{width:auto;height:100%;aspect-ratio:9/16;}
 .vid-close{position:absolute;top:-46px;right:0;background:none;border:0;color:var(--white);font-size:13px;font-family:var(--mono);letter-spacing:.14em;cursor:pointer;text-transform:uppercase;}
 .vid-close:hover{color:var(--warm);}
 
@@ -280,6 +299,7 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);}
       <a href="#capabilities">Capabilities</a>
       <a href="#process">Process</a>
       <a href="#studio">Studio</a>
+      <a href="#testimonials">Testimonials</a>
       <a href="#" class="nav-cta js-calendly">Book a call</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu</button>
@@ -402,14 +422,61 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);}
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<section class="sec" >
-  <div class="wrap rv">
-    <div class="quote-wrap">
-      <div class="eyebrow">What clients say</div>
-      <!-- TESTIMONIAL SLOT: swap quote + attribution -->
-      <p>"JCVISION didn't just shoot our campaign — they built the strategy that made it sell. The work looks like a film and performs like a funnel."</p>
-      <div class="by">Client Name <span>— Title, Company</span></div>
+<!-- VIDEO TESTIMONIALS -->
+<section class="sec" id="testimonials">
+  <div class="wrap">
+    <div class="rv" style="margin-bottom:56px;">
+      <div class="eyebrow">Client testimonials · 00:03:30:00</div>
+      <h2 class="title">Proof, on camera.</h2>
+      <p class="sec-intro">Don't take our word for it — take theirs. Real clients on what the work did for their brand.</p>
+    </div>
+    <div class="vtest-grid rv">
+
+      <!-- ============================================================
+           VIDEO IDs are already wired below. To finish each card,
+           just swap the quote line and the name/role to match the
+           person in that clip. The vertical thumbnail loads itself.
+           The gold vtest-metric chip is OPTIONAL — add one back with a
+           real number (e.g. <span class="vtest-metric">+38% bookings</span>)
+           or leave it off. Add/remove cards freely; the grid reflows.
+      ============================================================ -->
+
+      <div class="vtest" data-yt="8bf8hJ7QCsA">
+        <div class="vtest-media">
+          <img class="vtest-thumb" alt="Client testimonial" loading="lazy" />
+          <div class="vtest-grad"></div>
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="vtest-body">
+          <p class="vtest-quote">In her words.</p>
+          <div class="vtest-by">Megan <span>— Austin tech company</span></div>
+        </div>
+      </div>
+
+      <div class="vtest" data-yt="H-Pbm4h8atQ">
+        <div class="vtest-media">
+          <img class="vtest-thumb" alt="Client testimonial" loading="lazy" />
+          <div class="vtest-grad"></div>
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="vtest-body">
+          <p class="vtest-quote">In his words.</p>
+          <div class="vtest-by">Markus <span>— Co-founder, The Fampreneurs</span></div>
+        </div>
+      </div>
+
+      <div class="vtest" data-yt="kzl-p1ZWwmw">
+        <div class="vtest-media">
+          <img class="vtest-thumb" alt="Client testimonial" loading="lazy" />
+          <div class="vtest-grad"></div>
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+        <div class="vtest-body">
+          <p class="vtest-quote">Right after the shoot.</p>
+          <div class="vtest-by">Jonathan <span>— Photography client</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -510,9 +577,10 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);}
   });}
 
   var modal=document.getElementById('vidModal'),frame=document.getElementById('vidFrame');
-  function openVid(id){frame.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';modal.classList.add('open');}
+  function openVid(id,vertical){frame.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';modal.classList.toggle('vertical',!!vertical);modal.classList.add('open');}
   function closeVid(){modal.classList.remove('open');frame.innerHTML='';}
-  document.querySelectorAll('.tile[data-yt]').forEach(function(t){t.addEventListener('click',function(){openVid(t.getAttribute('data-yt'));});});
+  document.querySelectorAll('[data-yt]').forEach(function(t){t.addEventListener('click',function(){openVid(t.getAttribute('data-yt'),t.classList.contains('vtest'));});});
+  document.querySelectorAll('.vtest[data-yt]').forEach(function(c){var id=c.getAttribute('data-yt'),img=c.querySelector('.vtest-thumb');if(!img||img.getAttribute('src'))return;var srcs=['https://i.ytimg.com/vi/'+id+'/oardefault.jpg','https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg','https://i.ytimg.com/vi/'+id+'/hqdefault.jpg'],i=0;img.onerror=function(){i++;if(i<srcs.length){img.src=srcs[i];}else{img.style.display='none';}};img.src=srcs[0];});
   document.getElementById('vidClose').addEventListener('click',closeVid);
   modal.addEventListener('click',function(e){if(e.target===modal)closeVid();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVid();});
