@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>404 — JCVISION FILMS</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --shadow:#070809; --white:#F4F2EC; --muted:#8A8F86;
+  --warm:#D7A23C; --warm-2:#ECC97A; --cool:#83C04E;
+  --line-2:rgba(244,242,236,.16);
+  --display:"Bricolage Grotesque",sans-serif; --mono:"Space Mono",monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--shadow);color:var(--white);font-family:var(--mono);
+  min-height:100svh;display:flex;align-items:center;justify-content:center;
+  padding:40px;overflow:hidden;position:relative;text-align:center;}
+/* cinematic grade */
+body::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(60% 60% at 18% 100%, rgba(215,162,60,.16), transparent 60%),
+    radial-gradient(50% 50% at 90% 0%, rgba(131,192,78,.10), transparent 60%);}
+.frame{position:fixed;inset:34px;border:1px solid rgba(244,242,236,.10);pointer-events:none;z-index:1;}
+.wrap{position:relative;z-index:2;max-width:620px;}
+.rec{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:34px;}
+.dot{width:8px;height:8px;border-radius:50%;background:#E0564B;box-shadow:0 0 10px #E0564B;
+  animation:blink 1.6s steps(1) infinite;}
+@keyframes blink{50%{opacity:.25;}}
+.big{font-family:var(--display);font-weight:800;font-size:clamp(90px,20vw,190px);
+  line-height:.92;letter-spacing:-.03em;color:var(--white);}
+.big span{color:var(--warm);}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.4vw,32px);
+  margin:18px 0 14px;letter-spacing:-.01em;}
+p{color:var(--muted);font-size:14px;line-height:1.7;max-width:440px;margin:0 auto 34px;}
+.btn{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:.06em;
+  text-decoration:none;padding:15px 30px;border-radius:3px;
+  background:var(--warm);color:#0b0b0b;font-weight:700;transition:transform .3s var(--ease),background .3s;}
+.btn:hover{transform:translateY(-2px);background:var(--warm-2);}
+.sub{margin-top:26px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+.sub a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px;}
+.sub a:hover{color:var(--white);}
+</style>
+</head>
+<body>
+<div class="frame"></div>
+<div class="wrap">
+  <div class="rec"><span class="dot"></span> REC · scene not found</div>
+  <div class="big">4<span>0</span>4</div>
+  <h1>This shot didn't make the cut.</h1>
+  <p>The page you're after isn't here. Might have been moved, might never have existed. Either way, the work worth seeing is one click away.</p>
+  <a href="index.html" class="btn">Back to studio →</a>
+  <div class="sub"><a href="index.html#capabilities">Or browse the capabilities</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://jcvision-films.vercel.app/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://jcvision-films.vercel.app/video-production.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jcvision-films.vercel.app/photography.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jcvision-films.vercel.app/editing-post.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jcvision-films.vercel.app/directing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jcvision-films.vercel.app/ai-video-production.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jcvision-films.vercel.app/ai-image-production.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jcvision-films.vercel.app/media-buying.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jcvision-films.vercel.app/media-strategy-growth.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jcvision-films.vercel.app/custom-apps-automation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>
