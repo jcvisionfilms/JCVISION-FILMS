@@ -392,7 +392,7 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);}
   if('IntersectionObserver' in window && !reduce){
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{threshold:.16});
+    },{threshold:0,rootMargin:'0px 0px -60px 0px'});
     document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
   } else {
     document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
