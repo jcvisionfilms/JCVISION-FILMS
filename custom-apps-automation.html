@@ -483,5 +483,11 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);}
   document.querySelectorAll('.js-calendly').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();if(window.Calendly){Calendly.initPopupWidget({url:'https://calendly.com/jcvisionfilms'});}else{window.open('https://calendly.com/jcvisionfilms','_blank');}});});
 })();
 </script>
+
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
