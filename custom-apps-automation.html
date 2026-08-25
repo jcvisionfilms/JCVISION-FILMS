@@ -335,6 +335,28 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);}
   transition:border-color .3s var(--ease),transform .3s var(--ease),color .3s;}
 .backbtn:hover{border-color:var(--warm);color:var(--warm);transform:translateX(-3px);}
 @media(max-width:640px){.backbtn{width:48px;height:48px;left:14px;}}
+
+/* flagship: content desk */
+.flag{border:1px solid rgba(215,162,60,.40);background:linear-gradient(180deg,var(--panel),#0a0b0c);
+  border-radius:8px;padding:46px;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;position:relative;overflow:hidden;}
+.flag::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(52% 46% at 8% 108%, rgba(215,162,60,.14), transparent 62%);}
+@media(max-width:860px){.flag{grid-template-columns:1fr;padding:32px 24px;}}
+.flag .fk{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--warm);margin-bottom:16px;}
+.flag h2{font-family:var(--display);font-weight:800;font-size:clamp(30px,4vw,46px);line-height:1.02;letter-spacing:-.01em;margin-bottom:16px;}
+.flag p.fd{color:var(--muted);font-size:16px;line-height:1.7;margin-bottom:22px;}
+.flag .prod{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cool);margin-bottom:26px;}
+.feat{border-top:1px solid rgba(215,162,60,.22);}
+.feat li{list-style:none;display:flex;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(244,242,236,.08);}
+.feat .n{font-family:var(--mono);font-size:11px;color:var(--warm);letter-spacing:.1em;white-space:nowrap;}
+.feat .t{font-size:15px;color:var(--white);}
+.feat .t small{display:block;color:var(--muted);font-size:13px;margin-top:3px;line-height:1.5;}
+
+.flag-shot{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(215,162,60,.35);
+  box-shadow:0 30px 70px rgba(0,0,0,.5);align-self:center;}
+.flag-shot img{display:block;width:100%;height:auto;filter:saturate(.97) brightness(.97);
+  transform:scale(1.005);transition:filter .5s var(--ease),transform 1.4s var(--ease);}
+.flag:hover .flag-shot img{filter:saturate(1.03) brightness(1.03);transform:scale(1.02);}
 </style>
 </head>
 <body>
@@ -370,8 +392,37 @@ footer{padding:54px 0 40px;border-top:1px solid var(--line);}
     <h1 class="hero-h">TOOLS THAT<br><span class="warm">CONVERT.</span></h1>
     <p class="hero-sub">Custom web apps and automations built to do real work — lead-gen tools, internal systems, and client-facing products, designed and shipped end to end.</p>
     <div class="hero-cta">
-      <a href="#apps" class="btn btn-fill">See the tools ▾</a>
+      <a href="#content-desk" class="btn btn-fill">See the flagship ▾</a>
       <a href="#" class="btn btn-line js-calendly">Book a call</a>
+    </div>
+  </div>
+</section>
+
+<!-- FLAGSHIP: CONTENT DESK -->
+<section class="sec" id="content-desk">
+  <div class="wrap">
+    <div class="flag rv">
+      <div>
+        <div class="fk">Flagship · The Retainer Engine</div>
+        <h2>The Content Desk.</h2>
+        <p class="fd">A custom AI content engine built and installed for your brand. It writes in your voice, works in your formats, and turns one operator into a full content department — scripts, graphics, lead magnets, and recording, all in one desk.</p>
+        <div class="prod">In production daily · American Ally + JCVISION</div>
+        <ul class="feat">
+        <li><span class="n">01</span><span class="t">Talking-head scripts in your brand voice<small>Hooks, angles, and full scripts tuned to how you actually speak.</small></span></li>
+        <li><span class="n">02</span><span class="t">Static graphics with bulk export<small>Design-ready output straight into your Canva workflow.</small></span></li>
+        <li><span class="n">03</span><span class="t">Built-in teleprompter with camera recording<small>Script to recorded take without leaving the browser.</small></span></li>
+        <li><span class="n">04</span><span class="t">Lead magnet builder<small>Complete written assets, not outlines — ready to deliver.</small></span></li>
+        <li><span class="n">05</span><span class="t">Per-client guardrails<small>Compliance rules baked in, so nothing off-limits ships.</small></span></li>
+      </ul>
+        <div style="height:26px;"></div>
+        <div class="cta-pair" style="justify-content:flex-start;">
+          <a href="#" class="btn btn-fill js-calendly">Book a demo</a>
+          <a href="index.html#contact" class="btn btn-line">Ask a question</a>
+        </div>
+      </div>
+      <figure class="flag-shot">
+        <img src="assets/content-desk-shot.jpg" alt="Content Desk interface — Industry Pulse live research view" loading="lazy">
+      </figure>
     </div>
   </div>
 </section>
